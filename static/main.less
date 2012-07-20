@@ -1,0 +1,92 @@
+@bg: #2d2d2d;
+@link_bg: #222222;
+@fg: #eeeeee;
+
+body {
+	width: 900px;
+	margin: auto;
+	background-color: @bg;
+	color: @fg;
+	font-family: 'Overlock', sans-serif;
+
+	header > h1 {
+		text-align: center;
+		border-bottom: 1px solid #c1c1c1;
+
+		a {
+			color: @fg;
+			text-decoration: none;
+
+			&:hover {
+				color: @fg;
+				text-decoration: none;
+			}
+		}
+	}
+
+	article a {
+		color: @fg;
+		text-decoration: none;
+
+		&:hover, &:visited:hover {
+			font-style: italic;
+			color: @fg;
+		}
+
+		&:visited {
+			color: @bg;
+		}
+	}
+}
+
+.link {
+	background-color: @link_bg;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 2px;
+
+	.l_hits {
+		float: right;
+		padding-right: 10px;
+	}
+
+	.l_link {
+		font-weight: bold;
+		padding-left: 10px;
+	}
+}
+
+footer {
+	color: @link_bg;
+	font-weight: bold;
+	text-align: center;
+
+	a {
+		color: @link_bg;
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: @fg;
+
+		a {
+			color: @fg;
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&:visited, &:hover {
+				color: @fg;
+			}
+		}
+	}
+}
+
+form {
+	text-align: center;
+
+	table {
+		margin: auto;
+	}
+}

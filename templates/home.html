@@ -1,0 +1,12 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<article>
+	{% for r in result %}
+	<p class="link">
+		<span class="l_hits">{{r['hits']}}</span>
+		<span class="l_link"><a href="/goto/{{r['_id']}}">{{r['title']}}</a></span>
+		<span class="l_poster">par {{r['poster']}}</span>
+	</p>
+	{% endfor %}
+</article>
+{% endblock content %}

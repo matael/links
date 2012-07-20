@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+<article>
+	<form action="/new" method="post">
+		<table>
+		<tr><td><label for="form_url">Link :</label></td>
+			<td><input type="text" name="url" id="form_url"></td></tr>
+		<tr><td><label for="form_title">Title :</label></td>
+			<td><input type="text" name="title" id="form_title"></td></tr>
+		<tr><td><label for="form_poster">Poster :</label></td>
+			<td><input type="text" name="poster" id="form_poster"/></td></tr>
+		</table>
+		<input type="submit" value="Yeah !"/>
+	</form>
+</article>
+{% endblock %}
