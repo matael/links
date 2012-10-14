@@ -22,7 +22,7 @@ from bottle import\
 # MongoDB db name
 DBNAME="links"
 # Absolute path to static files
-STATIC_ROOT="/home/matael/workspace/learn/python/links/static"
+STATIC_ROOT="/home/matael/links/static"
 
 #### Tools ####
 def connect_db():
@@ -61,7 +61,6 @@ def new_link_form():
             title = unicode(request.POST.get("title").strip(), 'utf8')
         except KeyError:
             title = url
-        print("{}\n{}\n{}".format(poster, url, title))
         db = connect_db()
         db.insert({
             'url': url,
@@ -84,4 +83,4 @@ def goto(id):
     redirect(url)
 
 debug(True)
-run(reloader=True)
+#run(reloader=True)

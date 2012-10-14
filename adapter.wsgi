@@ -1,8 +1,8 @@
 import sys, os, bottle
 
-sys.path = ['/home/matael/today_quote/'] + sys.path
+sys.path = ['/home/matael/links/'] + sys.path
 os.chdir(os.path.dirname(__file__))
 
-import today_quote
+import links
 
 application = bottle.default_app()
