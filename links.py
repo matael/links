@@ -22,7 +22,7 @@ from bottle import\
 # MongoDB db name
 DBNAME="links"
 # Absolute path to static files
-STATIC_ROOT="/home/matael/workspace/learn/python/links/static"
+STATIC_ROOT="/home/matael/links/static"
 
 #### Tools ####
 def connect_db():
