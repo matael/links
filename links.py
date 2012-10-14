@@ -72,6 +72,7 @@ def new_link_form():
         })
         db.database.connection.disconnect()
         redirect('/')
+    else: redirect('/new')
 
 @get("/goto/<id>")
 def goto(id):
