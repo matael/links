@@ -61,7 +61,6 @@ def new_link_form():
             title = unicode(request.POST.get("title").strip(), 'utf8')
         except KeyError:
             title = url
-        print("{}\n{}\n{}".format(poster, url, title))
         db = connect_db()
         db.insert({
             'url': url,
@@ -83,4 +82,4 @@ def goto(id):
     redirect(url)
 
 debug(True)
-run(reloader=True)
+#run(reloader=True)
