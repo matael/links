@@ -1,10 +1,20 @@
 {% extends 'templates/base.html' %}
+{% block extraHead %}
+<script type="text/javascript">
+$(document).ready(function (){
+	$('.l_link a').click(function (){
+			var hits = $(this).parent().parent().children(".l_hits");
+			hits.html(parseInt(hits.html())+1);
+	});
+});
+</script>
+{% endblock %}
 {% block content %}
 <article>
 	{% for r in result %}
 	<p class="link">
 		<span class="l_hits">{{r['hits']}}</span>
-		<span class="l_link"><a href="/goto/{{r['_id']}}">{{r['title']}}</a></span>
+		<span class="l_link"><a target=_blank href="/goto/{{r['_id']}}">{{r['title']}}</a></span>
 		<span class="l_poster">par {{r['poster']}}</span>
 	</p>
 	{% endfor %}
