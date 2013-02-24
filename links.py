@@ -47,6 +47,14 @@ def home():
     result = db.find().sort('date', pymongo.DESCENDING)
     return template("templates/home.html", result=result)
 
+@get('/api/last')
+def api_last():
+    """ Return last sent link """
+    db = connect_db()
+    result = db.find_one(sort=[('date', pymongo.DESCENDING)])
+    result = str(result['_id'])
+    return "http://links.matael.org/goto/{0}".format(result)
+
 @get('/api/random')
 def api_random():
     """ Return a randomly chosen link """
