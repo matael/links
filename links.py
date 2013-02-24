@@ -8,6 +8,7 @@ import os
 from datetime import datetime
 from bson.objectid import ObjectId
 import pymongo
+from random import choice
 from bottle import\
         run, \
         debug, \
@@ -46,6 +47,14 @@ def home():
     result = db.find().sort('date', pymongo.DESCENDING)
     return template("templates/home.html", result=result)
 
+@get('/api/random')
+def api_random():
+    """ Return a randomly chosen link """
+    db = connect_db()
+    res = db.find()[0:]
+    result = [_ for _ in res]
+    result = choice(result)
+    return "http://links.matael.org/goto/{0}".format(result['_id'])
 
 @post("/new")
 @get("/new")
